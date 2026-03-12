@@ -10,8 +10,7 @@ import storeRouter from "./routes/storeRoute.js";
 import homeRouter from "./routes/homeRoute.js";
 import authRouter from "./routes/authRoute.js";
 import userRouter from "./routes/userRoute.js";
-
-import orderRouter from "./models/orderModel.js"
+import orderRouter from "./routes/orderRoute.js"
 
 const app = express();
 app.use(cors());
@@ -24,6 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 app.use("/images", express.static("uploads"));
+
 
 app.use(
   session({
@@ -43,6 +43,7 @@ app.use("/store", storeRouter);
 app.use("/", authenticateAdmin, homeRouter);
 app.use("/products", authenticateAdmin, productRouter);
 app.use("/users", authenticateAdmin, userRouter);
+
 
 const startServer = async () => {
   await dbConnect();
