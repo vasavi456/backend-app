@@ -11,6 +11,8 @@ import homeRouter from "./routes/homeRoute.js";
 import authRouter from "./routes/authRoute.js";
 import userRouter from "./routes/userRoute.js";
 
+import orderRouter from "./models/orderModel.js"
+
 const app = express();
 app.use(cors());
 dotenv.config();
