@@ -1,3 +1,4 @@
+
 const homePage = (req, res) => {
   res.render("home/index");
 };
